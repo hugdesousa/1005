@@ -12,14 +12,20 @@
           <circle cx="300" cy="300" r="220" stroke="black"  fill="white"stroke-width="2"></circle>
           <circle cx="300" cy="300" r="180" stroke="black"  fill="white"stroke-width="2"></circle>
           <circle cx="300" cy="300" r="140" stroke="black"  fill="white"stroke-width="2"></circle>
-
             
-
-            <line id="aig1" x1="300" y1="300" x2="300" y2="170"  style="stroke:black; stroke-width:3px" transform="rotate">
-                <animateTransform  attributeName="transform" type="rotate" dur="60s"
-                from="0 300 300" to="360 300 300" repeatCount="indefinite"/>
-              </line>
-              <circle cx="300" cy="300" r="10" stroke="black"  fill="yellow"stroke-width="2"></circle>    
+        <g style="stroke:black; stroke-width:3px">
+            <line id="aigH" x1="300" y1="300" x2="300" y2="170" transform="rotate"></line>
+            <line id="flecheH" x1="285" y1="190" x2="300" y2="170" transform="rotate"></line>
+            <line id="flecheH" x1="315" y1="190" x2="300" y2="170" transform="rotate"></line>
+                <animateTransform  attributeName="transform" type="rotate" dur="86400s" from="0 300 300" to="360 300 300" repeatCount="indefinite"/>
+        </g>
+        <g style="stroke:grey; stroke-width:3px">
+            <line id="aigM" x1="300" y1="300" x2="300" y2="170" transform="rotate"></line>
+            <line id="flecheM" x1="285" y1="190" x2="300" y2="170" transform="rotate"></line>
+            <line id="flecheM" x1="315" y1="190" x2="300" y2="170" transform="rotate"></line>
+                <animateTransform  attributeName="transform" type="rotate" dur="3600s" from="0 300 300" to="360 300 300" repeatCount="indefinite"/>
+        </g>
+              <circle cx="300" cy="300" r="10" stroke="black"  fill="yellow" stroke-width="2"></circle>    
           </svg>
 <button onclick="meteo()" > meteo </button>
     <script>
