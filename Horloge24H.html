@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Horloge 24H</title>
+        <meta charset="UTF-8">
+
+    </head>
+    <body>
+        <svg id="horloge" width="600" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background-color: white;">
+
+          <circle cx="300" cy="300" r="260" stroke="black"  fill="white" stroke-width="2"></circle>
+          <circle cx="300" cy="300" r="220" stroke="black"  fill="white"stroke-width="2"></circle>
+          <circle cx="300" cy="300" r="180" stroke="black"  fill="white"stroke-width="2"></circle>
+          <circle cx="300" cy="300" r="140" stroke="black"  fill="white"stroke-width="2"></circle>
+
+            
+
+            <line id="aig1" x1="300" y1="300" x2="300" y2="170"  style="stroke:black; stroke-width:3px" transform="rotate">
+                <animateTransform  attributeName="transform" type="rotate" dur="60s"
+                from="0 300 300" to="360 300 300" repeatCount="indefinite"/>
+              </line>
+              <circle cx="300" cy="300" r="10" stroke="black"  fill="yellow"stroke-width="2"></circle>    
+          </svg>
+<button onclick="meteo()" > meteo </button>
+    <script>
+var  svg=document.getElementById('horloge');
+
+
+function tic(rot){
+var e = document.createElementNS("http://www.w3.org/2000/svg", 'path');
+e.setAttribute("d","M 300 160 L 300 40");
+e.setAttribute("transform", "rotate(+"+rot+" 300 300)");
+e.setAttribute("fill","none");
+e.setAttribute("stroke","black");
+e.setAttribute("stroke-width","2");
+svg.appendChild(e);
+
+}
+
+
+function text(txt,rot,positionX,positionY){
+  var e = document.createElementNS("http://www.w3.org/2000/svg", 'text');
+  e.setAttribute("x",positionX);
+  e.setAttribute("y",positionY);
+  e.setAttribute("fill","black");
+  e.setAttribute("style","text-anchor:middle; font-family:Ubuntu ; font-size:25");
+  e.setAttribute("transform", "rotate(+"+rot+" 300 300)")
+  var textNode = document.createTextNode(txt);
+  e.appendChild(textNode);
+  svg.appendChild(e);
+
+}
+
+for(var i = 0; i < 360; i+=15) tic(i);
+for (var i=0; i < 24; i++) text(""+i,i*360/24,330,70);
+for (var i=0; i <24; i++) text(2,i*15,325,110);
+for (var i=0; i <24; i++) text(2,i*15,320,150);
+
+
+function meteo(){
+ var url="https://api.openweathermap.org/data/2.5/onecall?lat=45.5016946599&lon=-73.6171625313&&appid=852dbef5b9a2173266ef7aa05fa938ea"
+ var req = new XMLHttpRequest();
+  req.onreadystatechange = function() {
+      if (this.readystate == 4 && this.status == 200) {
+          var jmeteo=JSON.parse(this.responseText);
+          var h=jmeteo.hourly;
+            console.log(h.length);
+
+}
+};
+req.open ("GET", url, true);
+req.send ();
+}
+
+
+    </script>
+    </body>
+</html>
