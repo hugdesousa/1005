@@ -4,214 +4,7 @@
         <title>Horloge 24H</title>
         <meta charset="UTF-8">
         <style>
-            #presentation{}
-
-            .message{
-                margin:60px;
-                margin-top:620px;
-                order: 1;
-                
-            }
-
-            .horloge{
-                margin: auto;
-                order: 2;
-                
-            }
-
-            .legende{
-                border: 3px solid black;
-                margin:60px;
-                order: 3;
-                
-            }
-            #rangeeG {
-                width:300px ;
-                height:40px ;
-                fill:gainsboro;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="presentation">
-            <div class="message">
-                <contact>
-                    
-                    <h3>Petite pensée pour aujourd'hui!</h3>
-                    <textarea placeholder="Message"></textarea>
-                    <br>
-                    <input type="submit" value="Envoyer">
-                </contact>
-            </div>
-            <div class="horloge">
-                <svg id="horloge" width="800" height="800" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background-color: white;">
-
-                    <circle cx="400" cy="400" r="395" stroke="black"  fill="white" stroke-width="2"></circle>
-                    <circle cx="400" cy="400" r="350" stroke="black"  fill="white"stroke-width="2"></circle>
-                    <circle cx="400" cy="400" r="310" stroke="black"  fill="white"stroke-width="2"></circle>
-                    <circle cx="400" cy="400" r="270" stroke="black"  fill="white"stroke-width="2"></circle>
-                    <circle cx="400" cy="400" r="230" stroke="black"  fill="white"stroke-width="2"></circle>
-                
-                    <g style="stroke:red; stroke-width:3px">
-                        <line id="aigM" x1="400" y1="400" x2="400" y2="200"></line>
-                        <line id="flecheM" x1="400" y1="200" x2="380" y2="230"></line>
-                        <line id="flecheM" x1="400" y1="200" x2="420" y2="230"></line>
-                            <animateTransform  attributeName="transform" type="rotate" dur="86400s" from="0 400 400" to="360 400 400" repeatCount="indefinite"/>
-                    </g>
-                    <g style="stroke:green; stroke-width:3px">
-                        <line id="aigM" x1="400" y1="400" x2="400" y2="200"></line>
-                        <line id="flecheM" x1="400" y1="200" x2="380" y2="230"></line>
-                        <line id="flecheM" x1="400" y1="200" x2="420" y2="230"></line>
-                            <animateTransform  attributeName="transform" type="rotate" dur="3600s" from="0 400 400" to="360 400 400" repeatCount="indefinite"/>
-                    </g>
-                    <g style="stroke:blue; stroke-width:3px">
-                        <line id="aigM" x1="400" y1="400" x2="400" y2="200"></line>
-                        <line id="flecheM" x1="400" y1="200" x2="380" y2="230"></line>
-                        <line id="flecheM" x1="400" y1="200" x2="420" y2="230"></line>
-                            <animateTransform  attributeName="transform" type="rotate" dur="60s" from="0 400 400" to="360 400 400" repeatCount="indefinite"/>
-                    </g>
-
-                    <circle cx="400" cy="400" r="10" stroke="black"  fill="yellow" stroke-width="2"></circle>    
-
-                </svg>
-            </div>
-            <div class="legende">
-                <svg width="300px" height="auto">
-                  
-                    <g id='rangeeLegende'>
-                      <rect id='rangeeG' x='0' y='40'/>
-                      <rect id='rangeeG' x='0' y='120'/>
-                      <rect id='rangeeG' x='0' y='200'/>
-                      <rect id='rangeeG' x='0' y='280'/>
-                      <rect id='rangeeG' x='0' y='360'/>
-                      <rect id='rangeeG' x='0' y='440'/>
-                      <rect id='rangeeG' x='0' y='520'/>
-                      <rect id='rangeeG' x='0' y='600'/>
-                    
-                      <text x='30' y='30' font-size='18px' font-weight='bold'  text-anchor='middle'>
-                        <tspan  x='150'>Table des Matières</tspan>
-                      </text>
-                     <!--Separateurs-->
-                      <line x1="0" y1="40" x2="300" y2="40" stroke="black"></line>
-                      <line x1="150" y1="40" x2="150" y2="700" stroke="black"></line>
-                      
-                     <!--Terminologie de la legende-->
-                      <text font-size='16px'>
-                        <tspan  x='5' y='65'>Aiguille des heures</tspan>
-                        <tspan  x='5' y='105'>Aiguille des minutes</tspan>
-                        <tspan  x='5' y='145'>Aiguille des secondes</tspan>
-                        <tspan  x='5' y='185'>]0°C à 10°C[</tspan>
-                        <tspan  x='5' y='225'>[10°C à 20°C[</tspan>
-                        <tspan  x='5' y='265'>[20°C ou plus</tspan>
-                        <tspan  x='5' y='305'>[0°C à -10°C[</tspan>
-                        <tspan  x='5' y='345'>[-10°C à -20°C[</tspan>
-                        <tspan  x='5' y='385'>[-20°C ou moins</tspan>
-                        <tspan  x='5' y='425'>Forme de la lune</tspan>
-                        <tspan  x='5' y='465'>Levé du soleil</tspan>
-                        <tspan  x='5' y='505'>Couché du soleil</tspan>
-                        <tspan  x='5' y='545'>Heure ensoleillée</tspan>
-                        <tspan  x='5' y='585'>Heure partagée</tspan>
-                        <tspan  x='5' y='625'>Heure nuageuse</tspan>
-                        <tspan  x='5' y='665'>Heure pluvieuse</tspan>      
-                      </text>
-
-                      <!--Contenu de la legende-->
-                      <line x1="160" y1="60" x2="290" y2="60" stroke="red"></line>
-                      <line x1="280" y1="50" x2="290" y2="60" stroke="red"></line>
-                      <line x1="280" y1="70" x2="290" y2="60" stroke="red"></line>
-                      <line x1="160" y1="100" x2="290" y2="100" stroke="green"></line>
-                      <line x1="280" y1="90" x2="290" y2="100" stroke="green"></line>
-                      <line x1="280" y1="110" x2="290" y2="100" stroke="green"></line>
-                      <line x1="160" y1="140" x2="290" y2="140" stroke="blue"></line>
-                      <line x1="280" y1="130" x2="290" y2="140" stroke="blue"></line>
-                      <line x1="280" y1="150" x2="290" y2="140" stroke="blue"></line>
-
-                    </g>
-                  </svg>
-            </div>
-        </div>
-<button onclick="meteo()" > meteo </button>
-    <script>
-var  svg=document.getElementById('horloge');
-
-
-function tic(rot,x1,y1,x2,y2){
-var e = document.createElementNS("http://www.w3.org/2000/svg", 'path');
-e.setAttribute("d","M"+x1+" "+y1+" L"+x2+" "+y2+"");
-e.setAttribute("transform", "rotate(+"+rot+" 400 400)");
-e.setAttribute("fill","none");
-e.setAttribute("stroke","black");
-e.setAttribute("stroke-width","2");
-svg.appendChild(e);
-
-}
-
-
-function text(txt,size,rot,positionX,positionY){
-  var e = document.createElementNS("http://www.w3.org/2000/svg", 'text');
-  e.setAttribute("x",positionX);
-  e.setAttribute("y",positionY);
-  e.setAttribute("fill","black");
-  e.setAttribute("style","text-anchor:middle; font-family:Calibri ; font-size:35");
-  e.setAttribute("transform", "rotate(+"+rot+" 400 400)");
-
-  //Specification pour les secondes
-  if (size == 1){
-    e.setAttribute("style","text-anchor:middle; font-family:Calibri ; font-size:15");
-    e.setAttribute('rotate','-90');
-  }
-
-  if (size == 2){
-    e.setAttribute("style","text-anchor:middle; font-family:Calibri ; font-size:15");
-    e.setAttribute('rotate','90');
-  }
- 
-  var textNode = document.createTextNode(txt);
-  e.appendChild(textNode);
-  svg.appendChild(e);
-}
-
-//Les separateurs (pas les cercles)
-for(var i = 0; i < 360; i+=15) tic(i,400,130,400,5);
-for(var i = 0; i < 360; i+=6) tic(i,400,130,400,170);
-
-//Lever et coucher du soleil
-for (var i=0; i < 24; i++) text('o',0,(i*360/24)+7.5,400,40);
-
-//Temperature au fil de la journee
-for (var i=0; i <24; i++) text('x',0,(i*15)+7.5,400,80);
-
-//Cercle pour les heures
-for (var i=0; i <24; i++) text(""+i,0,(i*15)+7.5,400,120);
-
-//Cercle pour les secondes (a rendre plus efficace avec une fct while & in range)
-for (var i=0; i <10; i++) text(i,1,(i*6),421.5,155);
-for (var i=0; i <10; i++) text(i,1,(i*6)+60,421.5,151);
-for (var i=0; i <10; i++) text(i,1,(i*6)+120,421.5,151);
-for (var i=0; i <10; i++) text(i,2,(i*6)+180,411.5,151);
-for (var i=0; i <10; i++) text(i,2,(i*6)+240,411.5,151);
-for (var i=0; i <10; i++) text(i,2,(i*6)+300,411.5,151);
-
-for (var i=0; i <10; i++) text(1,1,(i*6)+60,421.5,158);
-for (var i=0; i <10; i++) text(2,1,(i*6)+120,421.5,158);
-for (var i=0; i <10; i++) text(3,2,(i*6)+180,411.5,143.5);
-for (var i=0; i <10; i++) text(4,2,(i*6)+240,411.5,143.5);
-for (var i=0; i <10; i++) text(5,2,(i*6)+300,411.5,143.5);
-
-function meteo(){
- var url="https://api.openweathermap.org/data/2.5/onecall?lat=45.5016946599&lon=-73.6171625313&&appid=852dbef5b9a2173266ef7aa05fa938ea"
- var req = new XMLHttpRequest();
-  req.onreadystatechange = function() {
-      if (this.readystate == 4 && this.status == 200) {
-          var jmeteo=JSON.parse(this.responseText);
-          var h=jmeteo.hourly;
-            console.log(h.length);
-
-}
-};
-req.open ("GET", url, true);
-req.send ();
-}
+            #presentation{
                 display: flex;
                 font-family:"Calibri";
             }
@@ -220,20 +13,20 @@ req.send ();
                 margin:60px;
                 margin-top:620px;
                 order: 1;
-                
+
             }
 
             .horloge{
                 margin: auto;
                 order: 2;
-                
+
             }
 
             .legende{
                 border: 3px solid black;
                 margin:60px;
                 order: 3;
-                
+
             }
             #rangeeG {
                 width:300px ;
@@ -246,7 +39,7 @@ req.send ();
         <div id="presentation">
             <div class="message">
                 <contact>
-                    
+
                     <h3>Petite pensée pour aujourd'hui!</h3>
                     <textarea placeholder="Message"></textarea>
                     <br>
@@ -261,7 +54,7 @@ req.send ();
                     <circle cx="400" cy="400" r="310" stroke="black"  fill="white"stroke-width="2"></circle>
                     <circle cx="400" cy="400" r="270" stroke="black"  fill="white"stroke-width="2"></circle>
                     <circle cx="400" cy="400" r="230" stroke="black"  fill="white"stroke-width="2"></circle>
-                
+
                     <g style="stroke:red; stroke-width:3px">
                         <line id="aigM" x1="400" y1="400" x2="400" y2="200"></line>
                         <line id="flecheM" x1="400" y1="200" x2="380" y2="230"></line>
@@ -281,13 +74,13 @@ req.send ();
                             <animateTransform  attributeName="transform" type="rotate" dur="60s" from="0 400 400" to="360 400 400" repeatCount="indefinite"/>
                     </g>
 
-                    <circle cx="400" cy="400" r="10" stroke="black"  fill="yellow" stroke-width="2"></circle>    
+                    <circle cx="400" cy="400" r="10" stroke="black"  fill="yellow" stroke-width="2"></circle>
 
                 </svg>
             </div>
             <div class="legende">
                 <svg width="300px" height="auto">
-                  
+
                     <g id='rangeeLegende'>
                       <rect id='rangeeG' x='0' y='40'/>
                       <rect id='rangeeG' x='0' y='120'/>
@@ -297,24 +90,24 @@ req.send ();
                       <rect id='rangeeG' x='0' y='440'/>
                       <rect id='rangeeG' x='0' y='520'/>
                       <rect id='rangeeG' x='0' y='600'/>
-                    
+
                       <text x='30' y='30' font-size='18px' font-weight='bold'  text-anchor='middle'>
                         <tspan  x='150'>Table des Matières</tspan>
                       </text>
                      <!--Separateurs-->
                       <line x1="0" y1="40" x2="300" y2="40" stroke="black"></line>
                       <line x1="150" y1="40" x2="150" y2="700" stroke="black"></line>
-                      
+
                      <!--Terminologie de la legende-->
                       <text font-size='16px'>
                         <tspan  x='5' y='65'>Aiguille des heures</tspan>
                         <tspan  x='5' y='105'>Aiguille des minutes</tspan>
                         <tspan  x='5' y='145'>Aiguille des secondes</tspan>
-                        <tspan  x='5' y='185'>]0°C à 10°C[</tspan>
-                        <tspan  x='5' y='225'>[10°C à 20°C[</tspan>
+                        <tspan  x='5' y='185'>[0°C à 10°C]</tspan>
+                        <tspan  x='5' y='225'>[10°C à 20°C]</tspan>
                         <tspan  x='5' y='265'>[20°C ou plus</tspan>
-                        <tspan  x='5' y='305'>[0°C à -10°C[</tspan>
-                        <tspan  x='5' y='345'>[-10°C à -20°C[</tspan>
+                        <tspan  x='5' y='305'>[0°C à -10°C]</tspan>
+                        <tspan  x='5' y='345'>[-10°C à -20°C]</tspan>
                         <tspan  x='5' y='385'>[-20°C ou moins</tspan>
                         <tspan  x='5' y='425'>Forme de la lune</tspan>
                         <tspan  x='5' y='465'>Levé du soleil</tspan>
@@ -322,7 +115,7 @@ req.send ();
                         <tspan  x='5' y='545'>Heure ensoleillée</tspan>
                         <tspan  x='5' y='585'>Heure partagée</tspan>
                         <tspan  x='5' y='625'>Heure nuageuse</tspan>
-                        <tspan  x='5' y='665'>Heure pluvieuse</tspan>      
+                        <tspan  x='5' y='665'>Heure pluvieuse</tspan>
                       </text>
 
                       <!--Contenu de la legende-->
@@ -375,7 +168,7 @@ function text(txt,size,rot,positionX,positionY){
     e.setAttribute("style","text-anchor:middle; font-family:Calibri ; font-size:15");
     e.setAttribute('rotate','90');
   }
- 
+
   var textNode = document.createTextNode(txt);
   e.appendChild(textNode);
   svg.appendChild(e);
@@ -388,8 +181,8 @@ for(var i = 0; i < 360; i+=6) tic(i,400,130,400,170);
 //Lever et coucher du soleil
 for (var i=0; i < 24; i++) text('o',0,(i*360/24)+7.5,400,40);
 
-//Temperature au fil de la journee
-for (var i=0; i <24; i++) text('x',0,(i*15)+7.5,400,80);
+
+
 
 //Cercle pour les heures
 for (var i=0; i <24; i++) text(""+i,0,(i*15)+7.5,400,120);
@@ -409,21 +202,23 @@ for (var i=0; i <10; i++) text(4,2,(i*6)+240,411.5,143.5);
 for (var i=0; i <10; i++) text(5,2,(i*6)+300,411.5,143.5);
 
 function meteo(){
- var url="https://api.openweathermap.org/data/2.5/onecall?lat=45.5016946599&lon=-73.6171625313&&appid=852dbef5b9a2173266ef7aa05fa938ea"
- var req = new XMLHttpRequest();
-  req.onreadystatechange = function() {
-      if (this.readystate == 4 && this.status == 200) {
-          var jmeteo=JSON.parse(this.responseText);
-          var h=jmeteo.hourly;
-            console.log(h.length);
 
-}
-};
-req.open ("GET", url, true);
-req.send ();
-}
+      let url ="https://api.openweathermap.org/data/2.5/onecall?lat=45.5016889&lon=-73.567256&appid=852dbef5b9a2173266ef7aa05fa938ea"
+      fetch(url).then(function(resp){
+        return resp.json();
+
+      })
+      .then(function(data){
+      var h = data.hourly
+      for (var i=0; i <24; i++) text(""+((h[i].temp)-273.15).toFixed(1)+"°",0,(i*15)+7.5,400,80);
 
 
+
+      });
+      }
     </script>
+
+
+
     </body>
 </html>
